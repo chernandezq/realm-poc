@@ -12,15 +12,15 @@ const App = () => {
 
   return (
     <AppProvider id={'test-realtime-0-iruyh'}>
-      <UserProvider fallback={Login}>
-        <RealmProvider sync={{partitionValue: 'partition1'}}>
-          <PaperProvider>
-            <QueryClientProvider client={queryClient}>
+      <QueryClientProvider client={queryClient}>
+        <UserProvider fallback={Login}>
+          <RealmProvider sync={{partitionValue: 'partition1'}}>
+            <PaperProvider>
               <Router />
-            </QueryClientProvider>
-          </PaperProvider>
-        </RealmProvider>
-      </UserProvider>
+            </PaperProvider>
+          </RealmProvider>
+        </UserProvider>
+      </QueryClientProvider>
     </AppProvider>
   );
 };
